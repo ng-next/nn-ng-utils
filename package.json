@@ -1,0 +1,38 @@
+{
+  "name": "nn-ng-utils",
+  "version": "0.0.0",
+  "description": "utilities to register angular providers and ui-states and to collect angular module names",
+  "main": "./dist/index",
+  "jspm": {
+    "directories": {
+      "lib": "src"
+    },
+    "main": "index",
+    "format": "es6",
+    "registry": "jspm"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ng-next/nn-ng-utils.git"
+  },
+  "keywords": [
+    "ng-next",
+    "angular",
+    "jspm",
+    "register",
+    "module",
+    "names"
+  ],
+  "author": "Andreas Grimm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ng-next/nn-ng-utils/issues"
+  },
+  "homepage": "https://github.com/ng-next/nn-ng-utils",
+  "devDependencies": {
+    "jscs": "^1.10.0"
+  }
+}

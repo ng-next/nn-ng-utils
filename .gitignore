@@ -1,0 +1,18 @@
+# project settings folder for (JetBrains) IDE
+.idea
+
+# logs
+logs
+log
+*.log
+
+# runtime data
+pids
+*.pid
+*.seed
+
+node_modules
+jspm_packages
+
+# build
+build
