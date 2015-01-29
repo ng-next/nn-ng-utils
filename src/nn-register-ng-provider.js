@@ -1,6 +1,6 @@
 'format es6';
 
-import { nnNgModules } from './nn-ng-modules';
+import { nnNgModules } from './index';
 
 export var registerFactory = (
   ngFactoryName,
