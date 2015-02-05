@@ -1,6 +1,6 @@
 {
   "name": "nn-ng-utils",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "utilities to register angular providers and ui-states and to collect angular module names and config functions",
   "main": "./dist/index",
   "jspm": {
