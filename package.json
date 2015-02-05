@@ -1,7 +1,7 @@
 {
   "name": "nn-ng-utils",
-  "version": "0.0.0",
-  "description": "utilities to register angular providers and ui-states and to collect angular module names",
+  "version": "0.0.1",
+  "description": "utilities to register angular providers and ui-states and to collect angular module names and config functions",
   "main": "./dist/index",
   "jspm": {
     "directories": {
@@ -24,7 +24,8 @@
     "jspm",
     "register",
     "module",
-    "names"
+    "names",
+    "configurations"
   ],
   "author": "Andreas Grimm",
   "license": "MIT",
