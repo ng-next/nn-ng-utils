@@ -7,12 +7,13 @@ export var registerUiState = function (
   stateConfig,
   ngModuleName
 ) {
-  angular.module( ngModuleName, [] )
-  .config( $stateProvider => {
-    'ngInject';
-
+  var configureUiState = function configureUiState ( $stateProvider ) {
     $stateProvider.state( ngUiStateName, stateConfig );
-  });
+  };
+  configureUiState.$inject = [ '$stateProvider' ];
+
+  angular.module( ngModuleName, [] )
+  .config( configureUiState );
 
   nnNgModules.register( ngModuleName );
 };
