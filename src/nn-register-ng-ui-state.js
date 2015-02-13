@@ -1,5 +1,6 @@
 'format es6';
 
+import angular from 'angular';
 import { nnNgModules } from './index';
 
 export var registerUiState = function (
