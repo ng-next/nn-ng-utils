@@ -3,7 +3,7 @@
 class NnNgModules {
   constructor () {
     this._angularCoreModules = [];
-    this._angularModules = new Set();
+    this._angularModules = [];
   }
   register ( angularModuleName ) {
     if ( typeof angularModuleName !== 'string' ) {
@@ -11,7 +11,7 @@ class NnNgModules {
         'parameter "angularModuleName" must be of type "String".' );
     }
 
-    this._angularModules.add( angularModuleName );
+    this._angularModules.push( angularModuleName );
   }
 
   registerCore ( angularCoreModules ) {
@@ -25,7 +25,7 @@ class NnNgModules {
   }
 
   getAll () {
-    return this._angularCoreModules.concat( [ ...this._angularModules ] );
+    return this._angularCoreModules.concat( this._angularModules );
   }
 }
 
