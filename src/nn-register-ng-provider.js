@@ -32,7 +32,11 @@ export var registerDirective = (
   ngModuleName,
   ddo
 ) => {
-  register( 'directive', ngDirectiveName, ngModuleName, () => ddo );
+  if ( typeof ddo === 'object' ) {
+    register( 'directive', ngDirectiveName, ngModuleName, () => ddo );
+  } else if ( typeof ddo === 'function' ) {
+    register( 'directive', ngDirectiveName, ngModuleName, ddo );
+  }
 };
 
 function register (
