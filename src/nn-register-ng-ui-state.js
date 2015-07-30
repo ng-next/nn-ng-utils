@@ -1,3 +1,4 @@
+/* */
 'format es6';
 
 import angular from 'angular';
@@ -5,16 +6,15 @@ import { nnNgModules } from './index';
 
 export var registerUiState = function (
   ngUiStateName,
-  stateConfig,
-  ngModuleName
+  stateConfig
 ) {
   var configureUiState = function configureUiState ( $stateProvider ) {
     $stateProvider.state( ngUiStateName, stateConfig );
   };
   configureUiState.$inject = [ '$stateProvider' ];
 
-  angular.module( ngModuleName, [] )
+  angular.module( ngUiStateName, [] )
   .config( configureUiState );
 
-  nnNgModules.register( ngModuleName );
+  nnNgModules.register( ngUiStateName );
 };

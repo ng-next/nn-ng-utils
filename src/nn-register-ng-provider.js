@@ -1,3 +1,4 @@
+/* */
 'format es6';
 
 import angular from 'angular';
@@ -5,49 +6,44 @@ import { nnNgModules } from './index';
 
 export var registerFactory = (
   ngFactoryName,
-  ngModuleName,
   factory
 ) => {
-  register( 'factory', ngFactoryName, ngModuleName, factory );
+  register( 'factory', ngFactoryName, factory );
 };
 
 export var registerProvider = (
   ngProviderName,
-  ngModuleName,
-  provider
+ provider
 ) => {
-  register( 'provider', ngProviderName, ngModuleName, provider );
+  register( 'provider', ngProviderName, provider );
 };
 
 export var registerService = (
   ngServiceName,
-  ngModuleName,
   constructor
 ) => {
-  register( 'service', ngServiceName, ngModuleName, constructor );
+  register( 'service', ngServiceName, constructor );
 };
 
 export var registerDirective = (
   ngDirectiveName,
-  ngModuleName,
   ddo
 ) => {
   if ( typeof ddo === 'object' ) {
-    register( 'directive', ngDirectiveName, ngModuleName, () => ddo );
+    register( 'directive', ngDirectiveName, () => ddo );
   } else if ( typeof ddo === 'function' ) {
-    register( 'directive', ngDirectiveName, ngModuleName, ddo );
+    register( 'directive', ngDirectiveName, ddo );
   }
 };
 
 function register (
   type,
   ngProviderName,
-  ngModuleName,
   constructorOrFactory
 ) {
   guardAgainstUnknownProviderType();
   callAngularRegisterProviderDynamicallyByType();
-  nnNgModules.register( ngModuleName );
+  nnNgModules.register( ngProviderName );
 
   function guardAgainstUnknownProviderType () {
     if ( type !== 'factory' &&
@@ -60,7 +56,7 @@ function register (
   }
 
   function callAngularRegisterProviderDynamicallyByType () {
-    angular.module( ngModuleName, [] )[ type ](
+    angular.module( ngProviderName, [] )[ type ](
       ngProviderName, constructorOrFactory
     );
   }
